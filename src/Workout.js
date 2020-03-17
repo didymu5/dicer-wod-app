@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import UIfx from 'uifx'
 import Exercise from './Exercise'
 import { useTimer } from 'react-timer-hook'
 import randomExercise from './randomExercise'
 
+import alertAudio from './glassy_ding.mp3'
+
+const alert = new UIfx(alertAudio, { volumn: 0.8, throttleMs: 10 })
 
 const Workout = ({ ...props }) => {
   const { exercises, interval = 61 } = props
@@ -16,7 +20,11 @@ const Workout = ({ ...props }) => {
     expiryTimestamp: expiryTimestamp(),
     onExpire: () => resetExercsise()
   })
-
+  useEffect(() => {
+    if(seconds < 4 && seconds !== 0) {
+      alert.play()
+    }
+  }, [seconds])
   const resetExercsise = () => {
     setExercise(randomExercise(exercises.movements))
     restart(expiryTimestamp())

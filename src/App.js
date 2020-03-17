@@ -4,7 +4,7 @@ import Menu from './Menu'
 import exercises from './exercises.json'
 import Workout from './Workout'
 
-function App () {
+function App() {
   const [showMenu, setShowMenu] = useState(false)
   const toggleMenu = () => {
     setShowMenu(!showMenu)
