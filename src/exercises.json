@@ -21,7 +21,7 @@
   "movements": [
     {"amount": "1 min", "movement": "Water Break"},
     {"amount": "1 min", "movement": "Wall Sit"},
-    {"amount": "20", "movement": "Burpees"},
+    {"amount": "15", "movement": "Burpees"},
     {"amount": "15", "movement": "Jump Tucks"},
     {"amount": "20", "movement": "Squat Jumps"},
     {"amount": "20", "movement": "Jumping Lunges"},
